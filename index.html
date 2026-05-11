@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skusta Clee Login</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            height:100vh;
+            overflow:hidden;
+        }
+
+        /* BACKGROUND */
+        #login-screen{
+            position:fixed;
+            inset:0;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background:
+            linear-gradient(rgba(0,0,0,0.45),
+            rgba(0,0,0,0.45)),
+            url("Skusta Clee.jpg");
+
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+        }
+
+        /* LOGIN BOX */
+        .login-box{
+            width:360px;
+
+            background:rgba(255,255,255,0.10);
+
+            backdrop-filter:blur(12px);
+
+            border:1px solid rgba(255,255,255,0.2);
+
+            padding:40px;
+
+            border-radius:25px;
+
+            text-align:center;
+
+            box-shadow:0 10px 30px rgba(0,0,0,0.4);
+
+            color:white;
+        }
+
+        .login-box h1{
+            font-size:34px;
+            margin-bottom:10px;
+        }
+
+        .login-box p{
+            color:#ddd;
+            margin-bottom:25px;
+            font-size:14px;
+        }
+
+        .login-box input{
+            width:100%;
+            padding:14px;
+
+            margin-bottom:15px;
+
+            border:none;
+            outline:none;
+
+            border-radius:12px;
+
+            background:rgba(255,255,255,0.15);
+
+            color:white;
+
+            font-size:14px;
+        }
+
+        .login-box input::placeholder{
+            color:#ddd;
+        }
+
+        .login-box input:focus{
+            border:1px solid #00B4D8;
+        }
+
+        .login-box button{
+            width:100%;
+
+            padding:14px;
+
+            border:none;
+
+            border-radius:12px;
+
+            background:#00B4D8;
+
+            color:white;
+
+            font-size:15px;
+
+            font-weight:bold;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        .login-box button:hover{
+            background:#0096C7;
+            transform:scale(1.03);
+        }
+
+        .error-msg{
+            display:none;
+            color:#ff8080;
+            margin-bottom:10px;
+            font-size:13px;
+        }
+
+        .success-msg{
+            display:none;
+            color:#8cff8c;
+            margin-bottom:10px;
+            font-size:13px;
+        }
+
+        .link{
+            margin-top:18px;
+            font-size:13px;
+            color:#eee;
+        }
+
+        .link a{
+            color:#90E0EF;
+            text-decoration:none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div id="login-screen">
+
+    <div class="login-box">
+
+        <h1>Hi 🥰</h1>
+
+        <p>Please sign in to continue</p>
+
+        <div class="error-msg" id="error-msg">
+            Please fill in all fields.
+        </div>
+
+        <div class="success-msg" id="success-msg">
+            Login successful!
+        </div>
+
+        <input type="text"
+        id="username"
+        placeholder="Username">
+
+        <input type="password"
+        id="password"
+        placeholder="Password">
+
+        <button onclick="doLogin()">
+            Login
+        </button>
+
+        <div class="link">
+            No account yet?
+            <a href="#">Create one</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function doLogin(){
+
+    const u =
+    document.getElementById('username').value.trim();
+
+    const p =
+    document.getElementById('password').value.trim();
+
+    if(!u || !p){
+
+        document.getElementById('error-msg')
+        .style.display='block';
+
+        document.getElementById('success-msg')
+        .style.display='none';
+
+        return;
+    }
+
+    document.getElementById('error-msg')
+    .style.display='none';
+
+    document.getElementById('success-msg')
+    .style.display='block';
+}
+
+</script>
+
+</body>
+</html>
